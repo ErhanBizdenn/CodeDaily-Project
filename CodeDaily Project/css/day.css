@@ -1,0 +1,842 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+}
+
+body {
+    background-color: #191919;
+}
+
+.alert {
+    width: max-content;
+    height: 35px;
+    background-color: #15ff00b4;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 30px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 300ms all;
+    font-size: 12px;
+    display: flex;
+    padding-left: 15px;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: #fff;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' width='24' height='24'%3E%3Cpath fill='none' d='M0 0h24v24H0z'/%3E%3Cpath d='M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z' fill='rgba(255,255,255,1)'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 10px;
+    z-index: 9999;
+    padding-left: 40px;
+    padding-right: 20px;
+}
+
+.alert.active {
+    opacity: 1;
+    visibility: visible;
+    top: 30px;
+}
+
+
+
+.header {
+    width: 100%;
+    height: 90px;
+    position: relative;
+    border-bottom: 1px solid #BBCBCB;
+}
+
+.header .container {
+    width: 1200px;
+    height: 90px;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .container .logo {
+    color: #fff;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    font-size: 23px;
+    cursor: pointer;
+    
+}
+
+.header .container .logo svg {
+    margin-right: 10px;
+}
+
+.header .container .social .twitter {
+    width: 140px;
+    height: 40px;
+    border-radius: 25px;
+    cursor: pointer;
+    background-color: #BBCBCB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 19px;
+    transition: 150ms background-color ease-in-out;
+    
+}
+.header .container .social .twitter:hover {
+    background-color: rgba(255, 255, 255, .8);
+}
+
+.header .container .social .twitter svg {
+    margin-right: 10px;
+}
+
+
+
+
+
+
+
+
+
+.details {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+.details .container {
+    width: 1200px;
+    height: auto;
+    position: relative;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 30px;
+    gap: 50px
+
+}
+.details .container .post-review {
+    width: 600px;
+    height: 350px;
+    background-color: #bbcbcb2d;
+    padding: 10px;
+    padding-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 20px;
+}
+.details .container .post-review .img {
+    width: 100%;
+    height: 280px;
+    background-color: #1919198a;
+    border-radius: 15px;
+}
+
+.details .container .post-review .actions {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+}
+.details .container .post-review .actions button {
+    width: 180px;
+    height: 35px;
+    background-color: #bbcbcb3d;
+    font-weight: 600;
+    color: #fff;
+    border-radius: 10px;
+    outline: 0;
+    cursor: pointer;
+    border: 0;
+    transition: 200ms background-color ease-in-out;
+}
+.details .container .post-review .actions button:hover {
+    background-color: #bbcbcb4f;
+}
+
+.details .container .post-right {
+    width: 500px;
+    height: auto;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.details .container .post-right .share {
+    width: 80px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid #BBCBCB;   
+    display: flex;
+    justify-content: space-evenly;
+    padding: 5px;
+    align-items: center;
+    font-size: 14px;
+    cursor: pointer;
+
+}
+
+.details .container .post-right .date { 
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #bbcbcb15;
+}
+.details .container .post-right .tags  { 
+    padding-bottom: 15px;
+    border-bottom: 1px solid #bbcbcb15;
+    border-top: 1px solid #bbcbcb15;
+    padding-top: 15px;
+    margin-top: 10px;
+}
+
+.details .container .post-right .tags span { 
+    background-color: #bbcbcb15;
+    padding: 3px;
+    padding-right: 10px;
+    padding-left: 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: rgba(255, 255, 255, .8);
+}
+
+.details .container .post-right .color-palette {
+    width: 60%;
+    height: auto;
+    background-color: #bbcbcb15;
+    padding: 10px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-radius: 20px;
+}
+.details .container .post-right .color-palette p {
+    font-size: 14px;
+    margin-top: -10px;
+    color: rgba(255, 255, 255, .8);
+}
+
+.details .container .post-right .color-palette .color {
+    width: 120px;
+    height: auto;
+    padding: 5px;
+    background-color: #bbcbcb2d;
+    border-radius: 15px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+}
+.details .container .post-right .color-palette .color input {
+    width: 0;
+    opacity: 0;
+}
+
+.details .container .post-right .color-palette .color:hover {
+    background-color: #bbcbcb15;
+}
+
+.details .container .post-right .color-palette .color span {
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    display: block;
+    margin-right: 6px;
+}
+
+
+.footer {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 30px;
+}
+
+
+.footer .container {
+    width: 1200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 20px;
+}
+
+
+.footer .container .copyright {
+    color: #bbcbcb85;
+    font-weight: 600;
+    text-align: center;
+}
+.source-code {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+
+
+.source-code .container {
+    width: 1200px;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding-top: 20px;
+}
+.modal {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1919196b;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+    transition: 300ms all;
+    padding: 20px;
+}
+.modal .modal-share {
+    width: 500px;
+    height: 250px;
+    background-color: #191919;
+    border-radius: 20px;
+    padding: 30px;
+    color: #fff;
+    box-shadow: 0px 0px 1px #bbcbcba6;
+    opacity: 0;
+    visibility: hidden;
+    transition: 300ms all;
+}
+.modal .modal-share.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+.modal .modal-share h3 {
+    color: #fff;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.modal .modal-share h3 .close {
+    cursor: pointer;
+    background-color: rgba(255,255,255,0.05);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    padding: 3px;
+    transition: 200ms background-color ease-in-out;
+}
+.modal .modal-share h3 .close:hover {
+    background-color: rgba(255,255,255,0.1);
+}
+
+.modal .modal-share h4 {
+    color: #bbcbcbaf;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.modal .modal-share .wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.modal .modal-share .wrapper div {
+    cursor: pointer;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+
+.modal .modal-share .wrapper div:hover {
+    border-color: #fff;
+
+}
+
+.modal .modal-share .wrapper div:hover > svg {
+    fill: #fff;
+    
+}
+.modal .modal-share .input {
+    width: 100%;
+    height: 40px;
+    outline: 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    margin-top: 10px;
+    border-radius: 10px;
+    background-color: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.modal .modal-share .input input {
+    width: 70%;
+    height: 40px;
+    outline: 0;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    color: #fff;
+}
+.modal .modal-share .input button {
+    background-color: transparent;
+    border: 0;
+    outline: 0;
+    color: #BBCBCB;
+    cursor: pointer;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .header .container {
+        width: 1000px;
+    }
+    .details .container {
+        width: 1000px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 800px;
+        height: 400px;
+    }
+    .details .container .post-review  .img{
+        height: 340px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+    }
+    .source-code .container {
+        width: 1000px;
+
+    }
+    .footer .container {
+        width: 1000px;
+    }
+  }
+
+
+@media only screen and (max-width: 1000px) {
+    .header .container {
+        width: 800px;
+    }
+    .details .container {
+        width: 800px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 700px;
+        height: 400px;
+    }
+    .details .container .post-review  .img{
+        height: 340px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+    }
+    .content .container {
+        width: 800px;
+        grid-template-columns: auto auto;
+    }
+    .source-code .container {
+        width: 800px;
+
+    }
+    .footer .container {
+        width: 800px;
+    }
+  }
+
+  @media only screen and (max-width: 800px) {
+    .header .container {
+        width: 600px;
+    }
+    .details .container {
+        width: 600px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 550px;
+        height: 350px;
+    }
+    .details .container .post-review .actions button {
+        width: 150px;
+    }
+    .details .container .post-review  .img{
+        height: 280px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+    }
+    .content .container {
+        width: 600px;
+        grid-template-columns: auto auto;
+        gap: 30px;
+    }
+
+    .content .container .item {
+        width: 250px;
+        height: 240px;
+        padding-bottom: 10px;
+    }
+    .source-code .container {
+        width: 600px;
+
+    }
+    .content .container .item .img {
+        height: 150px;
+    }
+    .footer .container {
+        width: 600px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .header .container {
+        width: 550px;
+    }
+    .header .container .logo {
+        font-size: 20px;
+    }
+    .header .container .social .twitter {
+        width: 130px;
+        height: 35px;
+        font-size: 16px;
+    }
+    .header .container .social .twitter svg {
+        width: 24px;
+        height: 24px;
+    }
+    .details .container {
+        width: 550px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 500px;
+        height: 350px;
+    }
+    .details .container .post-review .actions button {
+        width: 150px;
+    }
+    .details .container .post-review  .img{
+        height: 280px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+    }
+    .content .container {
+        width: 550px;
+        grid-template-columns: auto ;
+        gap: 30px;
+        justify-content: center;
+    }
+    .content .container .item {
+        width: 400px;
+        height: 300px;
+    }
+    .source-code .container {
+        width: 550px;
+
+    }
+    .content .container .item .img {
+        height: 200px;
+    }
+    .footer .container {
+        width: 550px;
+    }
+  }
+
+  @media only screen and (max-width: 550px) {
+    .header .container {
+        width: 500px;
+    }
+    .details .container {
+        width: 500px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 450px;
+        height: 300px;
+    }
+    .details .container .post-review .actions button {
+        width: 130px;
+    }
+    .details .container .post-review  .img{
+        height: 240px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+    }
+    .content .container {
+        width: 500px;
+        grid-template-columns: auto;
+        gap: 30px;
+        justify-content: center;
+    }
+    .content .container .item {
+        width: 400px;
+        height: 300px;
+    }
+    .source-code .container {
+        width: 500px;
+
+    }
+    .content .container .item .img {
+        height: 200px;
+    }
+        .details .container .post-right {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .details .container .post-right .color-palette {
+        width: 100%;
+        flex-direction: column!important;
+        flex-wrap: wrap;
+        align-items: center;
+        
+    }
+    .footer .container {
+        width: 500px;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .header .container {
+        width: 450px;
+    }
+    .details .container {
+        width: 450px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 400px;
+        height: 280px;
+    }
+    .details .container .post-review .actions button {
+        width: 110px;
+    }
+    .details .container .post-review  .img{
+        height: 220px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+        width: 100%;
+    }
+    .details .container .post-right .color-palette {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .content .container {
+        width: 450px;
+        grid-template-columns: auto ;
+        gap: 30px;
+        justify-content: center;
+    }
+    .content .container .item {
+        width: 400px;
+        height: 300px;
+    }
+    .source-code .container {
+        width: 450px;
+
+    }
+    .content .container .item .img {
+        height: 200px;
+    }
+    .footer .container {
+        width: 450px;
+    }
+  }
+
+  @media only screen and (max-width: 450px) {
+    .header .container {
+        width: 400px;
+    }
+    .details .container {
+        width: 400px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 380px;
+        height: 260px;
+    }
+    .details .container .post-review .actions button {
+        width: 110px;
+    }
+    .details .container .post-review  .img{
+        height: 200px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+    }
+    .content .container {
+        width: 400px;
+        grid-template-columns: auto ;
+        gap: 30px;
+        justify-content: center;
+    }
+    .content .container .item {
+        width: 380px;
+        height: 300px;
+    }
+    .source-code .container {
+        width: 400px;
+
+    }
+    .content .container .item .img {
+        height: 200px;
+    }
+    .footer .container {
+        width: 400px;
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    .header .container {
+        width: 350px;
+    }
+    .details .container {
+        width: 350px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 330px;
+        height: 250px;
+    }
+    .details .container .post-review .actions button {
+        width: 90px;
+    }
+    .details .container .post-review  .img{
+        height: 190px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+    }
+    .content .container {
+        width: 350px;
+        grid-template-columns: auto ;
+        gap: 30px;
+        justify-content: center;
+    }
+    .content .container .item {
+        width: 330px;
+        height: 280px;
+    }
+
+    .content .container .item .img {
+        height: 180px;
+    }
+    .source-code .container {
+        width: 350px;
+
+    }
+    .footer .container {
+        width: 350px;
+    }
+  }
+  @media only screen and (max-width: 350px) {
+    .header .container {
+        width: 320px;
+    }
+    .details .container {
+        width: 320px;
+        flex-direction: column;
+        align-items: center;
+    }
+    .details .container .post-review {
+        width: 300px;
+        height: 250px;
+    }
+    .details .container .post-review .actions button {
+        width: 80px;
+    }
+    .details .container .post-review  .img{
+        height: 190px;
+    }
+    .details .container .post-right {
+        align-items: center;
+        text-align: center;
+    }
+    .content .container {
+        width: 320px;
+        grid-template-columns: auto ;
+        gap: 30px;
+        justify-content: center;
+    }
+    .content .container .item {
+        width: 300px;
+        height: 250px;
+    }
+    .source-code .container {
+        width: 320px;
+
+    }
+    .content .container .item .img {
+        height: 160px;
+    }
+    .footer .container {
+        width: 320px;
+    }
+  }
